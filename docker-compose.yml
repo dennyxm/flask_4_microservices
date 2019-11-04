@@ -1,0 +1,16 @@
+version: "3.5"
+
+services:
+  flaskapp:
+    build: .
+    volumes:
+      - .:/flaskapp
+    ports:
+      - "9000:9000"
+    command: ./entrypoint.sh
+    environment:
+      - FLASK_ENV=development
+
+networks:
+  default:
+   name: bootcamp13
